@@ -1,0 +1,31 @@
+Tutorial
+https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
+Useful commands
+https://www.freecodecamp.org/news/10-important-git-commands-that-every-developer-should-know/
+
+
+from github ->
+…or create a new repository on the command line
+echo "# My_Git" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/SlavchoSaykov/My_Git.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/SlavchoSaykov/My_Git.git
+git branch -M main
+git push -u origin main
+
+
+
+The staging area
+The primary function of the git add command, is to promote pending changes in the working directory, to the git staging area. The staging area is one of Git's more unique features, and it can take some time to wrap your head around it if you’re coming from an SVN (or even a Mercurial) background. It helps to think of it as a buffer between the working directory and the project history. The staging area is considered one of the "three trees" of Git, along with, the working directory, and the commit history.
+
+Instead of committing all of the changes you've made since the last commit, the stage lets you group related changes into highly focused snapshots before actually committing it to the project history. This means you can make all sorts of edits to unrelated files, then go back and split them up into logical commits by adding related changes to the stage and commit them piece-by-piece. As in any revision control system, it’s important to create atomic commits so that it’s easy to track down bugs and revert changes with minimal impact on the rest of the project.
+
+The staging area
+Основната функция на командата git add е да прехвърли висящите промени в работната директория в git staging зоната. The staging зоната е една от по-уникалните функции на Git и може да отнеме известно време, за да я схванете, ако идвате от SVN (или дори Mercurial). Помага да се мисли за нея като за буфер между работната директория и историята на проекта. The staging областта се счита за едно от "трите дървета" на Git, заедно с работната директория и областта за съхранение (commit).
+
+Вместо да commit-нете всички промени, които сте направили след последният commit, stage областта ви позволява да групирате свързани промени в силно фокусирани моментни блокове от записи, преди действително да ги commit-нете в историята на проекта. Това означава, че можете да правите всякакви редакции на несвързани файлове, след което да се върнете назад и да ги разделите на логически commit-и, като добавяте свързани промени към stage областта и ги commit-нете част по част. Както във всяка система за контрол на ревизиите, важно е да се създават атомарни commit-и, така че да е лесно да се проследяват грешки и да се връщат промените с минимално въздействие върху останалата част от проекта!

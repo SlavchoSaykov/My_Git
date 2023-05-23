@@ -1,0 +1,103 @@
+
+page 72
+instead
+$ sudo apt-get install git wget make libncurses-dev flex bison gperf python pythonserial
+
+$ sudo apt-get install git wget make libncurses-dev flex bison gperf python3 python3-serial
+
+
+
+wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
+
+BG89UBBS80023300354010
+9606262860 
+Кристиян Силвов Иванов
+
+
+/*************************************************************************************************************************************/
+/*                          Standard Toolchain Setup for Linux and macOS                                                             */
+/*************************************************************************************************************************************/
+
+Step 1. Install Prerequisites
+In order to use ESP-IDF with the ESP32, you need to install some software packages based on your Operating System. This setup guide will help you on getting everything installed on Linux and macOS based systems.
+
+For Linux Users
+To compile using ESP-IDF you will need to get the following packages. The command to run depends on which distribution of Linux you are using:
+
+Ubuntu and Debian:
+sudo apt-get install git wget flex bison gperf python3 python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+
+CentOS 7 & 8:
+sudo yum -y update && sudo yum install git wget flex bison gperf python3 cmake ninja-build ccache dfu-util libusbx
+
+
+Installing Python 3
+Based on macOS Catalina 10.15 release notes, use of Python 2.7 is not recommended and Python 2.7 will not be included by default in future versions of macOS. Check what Python you currently have:
+
+python --version
+
+If the output is like Python 2.7.17, your default interpreter is Python 2.7. If so, also check if Python 3 isn’t already installed on your computer:
+
+python3 --version
+
+If the above command returns an error, it means Python 3 is not installed.
+
+Below is an overview of the steps to install Python 3.
+
+Installing with HomeBrew can be done as follows:
+
+brew install python3
+
+If you have MacPorts, you can run:
+
+sudo port install python38
+
+Step 2. Get ESP-IDF
+To build applications for the ESP32, you need the software libraries provided by Espressif in ESP-IDF repository.
+
+To get ESP-IDF, navigate to your installation directory and clone the repository with git clone, following 
+instructions below specific to your operating system.
+
+Open Terminal, and run the following commands:
+
+mkdir -p ~/esp
+cd ~/esp
+git clone --recursive https://github.com/espressif/esp-idf.git
+
+ESP-IDF will be downloaded into ~/esp/esp-idf.
+
+Consult ESP-IDF Versions for information about which ESP-IDF version to use in a given situation.
+
+Step 3. Set up the tools
+Aside from the ESP-IDF, you also need to install the tools used by ESP-IDF, such as the compiler, debugger, 
+Python packages, etc, for projects supporting ESP32.
+
+cd ~/esp/esp-idf
+./install.sh esp32
+
+or with Fish shell
+
+cd ~/esp/esp-idf
+./install.fish esp32
+
+The above commands install tools for ESP32 only. If you intend to develop projects for more chip targets then 
+you should list all of them and run for example:
+
+cd ~/esp/esp-idf
+./install.sh esp32,esp32s2
+
+or with Fish shell
+
+cd ~/esp/esp-idf
+./install.fish esp32,esp32s2
+In order to install tools for all supported targets please run the following command:
+
+cd ~/esp/esp-idf
+./install.sh all
+
+or with Fish shell
+
+cd ~/esp/esp-idf
+./install.fish all
+
+
